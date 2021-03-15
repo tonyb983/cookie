@@ -15,7 +15,7 @@ WORKDIR /go/src/github.com/tonyb983/cookie
 RUN make build-alpine
 
 # Final Stage
-FROM alpine:latest
+FROM golang:1.16.2
 
 ARG GIT_COMMIT
 ARG VERSION
