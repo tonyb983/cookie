@@ -1,7 +1,6 @@
 package main
 
 import (
-	
 	"github.com/tonyb983/cookie/cmd"
 )
 
