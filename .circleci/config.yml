@@ -11,7 +11,8 @@ jobs:
           name: Install dependencies
           command: |
             apk add --no-cache \
-              make
+              make \
+              && rm -rf /var/lib/apt/lists/*
       - restore_cache:
           keys:
             - v1-{{ .Branch }}
@@ -32,7 +33,7 @@ jobs:
           name: Save Docker image layer cache
           command: |
             mkdir -p /caches
-            docker save -o /caches/app.tar tonyb983/cookie
+            docker save -o /caches/app.tar tonyb983/golang-cookie
       - save_cache:
           key:  v1-{{ .Branch }}-{{ epoch }}
           paths:

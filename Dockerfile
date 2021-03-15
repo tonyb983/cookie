@@ -9,10 +9,14 @@ ENV PROJPATH=/go/src/github.com/tonyb983/cookie
 # Because of https://github.com/docker/docker/issues/14914
 ENV PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+RUN apt-get
+
 ADD . /go/src/github.com/tonyb983/cookie
 WORKDIR /go/src/github.com/tonyb983/cookie
 
 RUN make build-alpine
+
+RUN ls /go/src/github.com/tonyb983/cookie
 
 # Final Stage
 FROM golang:1.16.2
