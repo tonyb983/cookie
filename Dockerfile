@@ -1,5 +1,5 @@
 # Build Stage
-FROM tonyb983/golang-cookie-buildimage:1.13 AS build-stage
+FROM golang:1.16.2 AS build-stage
 
 LABEL app="build-cookie"
 LABEL REPO="https://github.com/tonyb983/cookie"
