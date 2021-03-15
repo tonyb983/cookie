@@ -11,8 +11,7 @@ jobs:
           name: Install dependencies
           command: |
             apk add --no-cache \
-              make \
-              && rm -rf /var/lib/apt/lists/*
+              make
       - restore_cache:
           keys:
             - v1-{{ .Branch }}
